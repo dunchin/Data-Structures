@@ -1,6 +1,9 @@
 package Graph;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Stack;
+import java.util.Vector;
 
 class Graph {
     ArrayList<ArrayList<Integer>> graph;
@@ -17,7 +20,7 @@ class Graph {
 
     void addEdge(int v, int u) {
         graph.get(v).add(u);
-        graph.get(u).add(v);
+        //graph.get(u).add(v);
     }
 
     void printGraph() {
@@ -35,6 +38,35 @@ class Graph {
         }
     }
 
+    void dfs(int start){
+
+        Vector<Boolean> visited = new Vector<Boolean>(V);
+        for (int i = 0; i < V; i++){
+            visited.add(false);}
+
+        Stack<Integer> a = new Stack<>();
+        a.push(start);
+
+        while(!a.isEmpty()){
+            start = a.peek();
+            a.pop();
+            if(visited.get(start) == false)
+            {
+                System.out.print(start + " ");
+                visited.set(start, true);
+            }
+        }
+        Iterator<Integer> itr = graph.get(start).iterator();
+
+        while (itr.hasNext()) {
+            int v = itr.next();
+
+            if(!visited.get(v))
+            {
+                a.push(v);}
+        }
+
+    }
 
 }
 
@@ -47,6 +79,7 @@ public class GraphExample {
         graph1.addEdge(1, 3);
         graph1.addEdge(3, 4);
         graph1.printGraph();
+        graph1.dfs(0);
 
     }
 

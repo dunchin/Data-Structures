@@ -3,7 +3,7 @@ package recursion;
 public class Fibbonaci_re {
 
     public static void main(String[] args) {
-        System.out.println(fibb(7));
+        System.out.println(fibb(6));
     }
 
     public static int fibb(int n) {

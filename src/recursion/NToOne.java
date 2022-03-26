@@ -2,10 +2,10 @@ package recursion;
 // Q: print from n to one using recursion
 public class NToOne {
     public static void main(String[] args) {
-        System.out.println("N to One ");
+        System.out.println("N to One");
         nToOne(8);
         System.out.println();
-        System.out.println("One to N ");
+        System.out.println("One to N");
         oneToN(8);
     }
     public static void nToOne(int n){

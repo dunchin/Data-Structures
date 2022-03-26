@@ -1,8 +1,7 @@
 package recursion;
-
+// Number of steps so that a number could be reduced to zero ,if num is even divide it to half ,if its not subtract one from it.
 public class FindSteps {
     public static void main(String[] args) {
-
         System.out.println(steps(1000, 0));
     }
 
